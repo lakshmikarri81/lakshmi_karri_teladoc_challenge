@@ -1,0 +1,13 @@
+{
+  "addUser": {
+    "firstName": "Robin",
+    "lastName": "Brown",
+    "username": "robinBrown",
+    "password": "Test@123",
+    "email": "john_doe@test.com",
+    "phone": "7776780987"
+  },
+  "identifyUser": {
+    "username": "novak"
+  }
+}
