@@ -5,10 +5,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class WebDriverConfig {
-    public static final String CHROME_DRIVER_PATH;
+    public static final String CHROME_DRIVER;
     public static final String WEB_TABLES_URL;
+    static Logger logger = Logger.getLogger(WebDriverConfig.class.getName());
 
     static {
         Properties properties = new Properties();
@@ -18,7 +20,13 @@ public class WebDriverConfig {
             e.printStackTrace();
             throw new RuntimeException("Failed to load setup.properties file.");
         }
-        CHROME_DRIVER_PATH = properties.getProperty("CHROME_DRIVER_PATH");
+        logger.info("Setting up ChromeDriver path");
+        String osName = System.getProperty("os.name").toLowerCase();
+        if(osName.contains("win")){
+            CHROME_DRIVER = properties.getProperty("CHROME_DRIVER_WIN");
+        }else{
+            CHROME_DRIVER = properties.getProperty("CHROME_DRIVER_LUX");
+        }
         WEB_TABLES_URL = properties.getProperty("WEB_TABLES_URL");
     }
 

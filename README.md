@@ -24,10 +24,10 @@ This project automates web table operations such as adding, verifying, and delet
 
 3. Install the project dependencies using Maven:
 
-   mvn clean install -DSkipTests
+   mvn clean install -P skip-tests
 
 ## Running Tests
 
-To run the tests, use the following command:
+To run the tests, use any of the following commands:
 
-    mvn test
+    mvn test or mvn clean install -P run-tests

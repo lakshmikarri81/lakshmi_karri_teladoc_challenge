@@ -20,7 +20,7 @@ public class WebTablesSteps {
     @Given("I am on the web tables page")
     public void i_am_on_the_web_tables_page() {
         logger.info("Setting up ChromeDriver path");
-        System.setProperty("webdriver.chrome.driver", WebDriverConfig.CHROME_DRIVER_PATH);
+        System.setProperty("webdriver.chrome.driver", WebDriverConfig.CHROME_DRIVER);
 
         logger.info("Setting Chrome options");
         ChromeOptions options = WebDriverConfig.getChromeOptions();
